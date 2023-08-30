@@ -4,9 +4,9 @@ import type { Metadata } from "next";
 import Navbar from "./components/navbar/Navbar";
 import ClientOnly from "./components/ClientOnly";
 import RegisterModal from "./components/modals/RegisterModal";
+import LoginModal from "./components/modals/LoginModal";
 import ToasterProvider from "./providers/ToasterProvider";
-
-const font = Nunito({ subsets: ["latin"] });
+import getCurrentUser from "./actions/getCurrentUser";
 
 export const metadata: Metadata = {
   title: "Renthabitapp",
@@ -14,18 +14,23 @@ export const metadata: Metadata = {
     "¡Busca, Encuentra, Renta!. Renthabitapp es una plataforma que te permite buscar y encontrar el inmueble que necesitas para rentar.",
 };
 
-export default function RootLayout({
+const font = Nunito({ subsets: ["latin"] });
+
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const currentUser = await getCurrentUser();
+
   return (
     <html lang="es">
       <body className={font.className}>
         <ClientOnly>
           <ToasterProvider />
+          <LoginModal />
           <RegisterModal />
-          <Navbar />
+          <Navbar currentUser={currentUser} />
         </ClientOnly>
         {children}
       </body>
