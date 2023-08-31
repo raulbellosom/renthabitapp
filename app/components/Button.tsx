@@ -23,9 +23,9 @@ const Button: React.FC<ButtonProps> = ({
       onClick={onClick}
       disabled={disabled}
       className={`relative disabled:opacity-70 disabled:cursor-not-allowed rounded-lg hover:opacity-80 transition w-full ${
-        outline ? "bg-white" : "bg-rose-500"
-      } ${outline ? "border-black" : "border-rose-500"} ${
-        outline ? "text-black" : "text-white"
+        outline ? "bg-white" : "bg-rha_primary_yellow"
+      } ${outline ? "border-rha_primary_dark" : "border-rha_primary_yellow"} ${
+        outline ? "text-rha_primary_dark" : "text-white"
       } ${small ? "py-1" : "py-3"}
       ${small ? "text-sm" : "text-base"}
       ${small ? "border-[1px]" : "border-2"}`}

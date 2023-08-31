@@ -7,14 +7,15 @@ const Logo = () => {
   const router = useRouter();
 
   return (
-    <Image
-      alt="logo"
-      className="hidden md:block cursor-pointer"
-      height="100"
-      width="100"
-      src="/images/logo.png"
+    <div
       onClick={() => router.push("/")}
-    />
+      className="flex items-center gap-2 cursor-pointer"
+    >
+      <Image alt="logo" height="40" width="40" src="/images/icon.png" />
+      <p className="hidden md:block text-lg font-bold text-rha_primary_dark">
+        Renthabitapp
+      </p>
+    </div>
   );
 };
 

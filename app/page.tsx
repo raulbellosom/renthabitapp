@@ -1,3 +1,5 @@
 export default function Home() {
-  return <div className="text-rose-500"> Welcome to Renthabitapp</div>;
+  return (
+    <div className="text-rha_primary_yellow"> Welcome to Renthabitapp</div>
+  );
 }
