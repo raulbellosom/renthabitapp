@@ -87,7 +87,7 @@ const Modal: React.FC<ModalProps> = ({
                       outline
                       disabled={disabled}
                       label={secondaryActionLabel}
-                      onClick={handleClose}
+                      onClick={handleSecondaryAction}
                     />
                   )}
                   <Button
